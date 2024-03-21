@@ -1,0 +1,36 @@
+{
+    "position": "top", 
+    "height": 34,
+    "modules-left": ["custom/arch","hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio"],
+    // Modules configuration
+    "custom/arch": {
+          "format": "",
+          "tooltip": false
+       // "on-click": "sh $HOME/.config/rofi/bin/powermenu"
+     },
+	"hyprland/workspaces": {
+		  "all-outputs": true,
+	      "format": "{name}",
+	      "format": "{icon}",
+	      "format-icons": {
+	        "active": "",
+	        "default": ""
+	      }
+	 },
+	"clock": {
+		"format": "{:%H:%M}",
+        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        	"format-alt": "{:%Y-%m-%d}"
+	},
+	"pulseaudio": {
+	      "format": "<span color='black'>{icon} </span> {volume}%",
+	      "format-muted": "",
+	      "tooltip": false,
+	      "format-icons": {
+	        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+	      },
+	      "scroll-step": 1,
+	 }
+}
