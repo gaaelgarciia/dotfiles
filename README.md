@@ -1,6 +1,7 @@
 # dotfiles
 This is a repository dedicated to my .config files  
-  
+
+Distro: EndevourOS  
 Terminal: Kitty   
 Tool bar: Waybar  
 WM: Hyprland  
