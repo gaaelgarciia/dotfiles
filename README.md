@@ -5,7 +5,8 @@ Distro: EndevourOS
 Terminal: Kitty   
 Tool bar: Waybar  
 WM: Hyprland  
-FM: Dolphin  
+FM: Ranger  
+FE: Nvim  
+Pdf Reader: Zathura  
 
-
-![image](https://github.com/gaaelgarciia/dotfiles/assets/142544263/36999978-fcda-43d5-9ed3-b538d4a0ea8f)
+![Uploading screenshot.png…]()
