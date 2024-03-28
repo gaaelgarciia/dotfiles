@@ -1,15 +1,15 @@
 {
     "position": "top", 
-    "height": 34,
+    "height": 30,
     "modules-left": ["custom/arch","hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["pulseaudio"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["clock","pulseaudio","network","battery"],
     // Modules configuration
-    "custom/arch": {
-          "format": "",
-          "tooltip": false
-       // "on-click": "sh $HOME/.config/rofi/bin/powermenu"
-     },
+	 "custom/arch": {
+	          "format": "",
+        	  "tooltip": false,
+          	"on-click": "exec wlogout"
+	 },
 	"hyprland/workspaces": {
 		  "all-outputs": true,
 	      "format": "{name}",
@@ -19,18 +19,60 @@
 	        "default": ""
 	      }
 	 },
+	 "hyprland/window":{
+	  "format": "{}"	
+	 },
 	"clock": {
-		"format": "{:%H:%M}",
-        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        	"format-alt": "{:%Y-%m-%d}"
-	},
-	"pulseaudio": {
-	      "format": "<span color='black'>{icon} </span> {volume}%",
+		"format": "{:%R 󰃭 %d·%m·%y}",
+        	"rotate": 0,
+        	"format-alt": "{:%I:%M %p}",
+        	"tooltip-format": "<tt>{calendar}</tt>",
+        	"calendar": {
+        	    "mode": "month",
+        	    "mode-mon-col": 3,
+        	    "on-scroll": 1,
+        	    "on-click-right": "mode",
+        	    "format": {
+        	        "months": "<span color='#ffead3'><b>{}</b></span>",
+        	        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        	        "today": "<span color='#ff6699'><b>{}</b></span>"
+        	    }
+        	},
+        	"actions": {
+        	    "on-click-right": "mode",
+        	    "on-click-forward": "tz_up",
+        	    "on-click-backward": "tz_down",
+        	    "on-scroll-up": "shift_up",
+        	    "on-scroll-down": "shift_down"
+        	}
+   	 },	
+    	"pulseaudio": {
+	      "format": "<span color='black'>{icon} </span>{volume}%",
 	      "format-muted": "",
 	      "tooltip": false,
 	      "format-icons": {
 	        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
 	      },
 	      "scroll-step": 1,
-	 }
+	 },
+
+	"battery": {
+	 	 "format": "{icon} {capacity}%",
+  	 	 "format-icons": [
+  		    "",
+   		   "",
+   		   "",
+   		   "",
+   		   ""
+   		 ],
+		 "format-charging": " {capacity}%"
+	 },
+	 "network": {
+    		"format": "󰖩 {essid}",
+    		//"tooltip": "{ifname}",
+    		//"tooltip-format": "{essid}",
+    		"interval": 2
+  	}
 }
+}
+
