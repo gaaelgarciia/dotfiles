@@ -20,7 +20,7 @@
 	      }
 	 },
 	 "hyprland/window":{
-	  "format": "{}"	
+	  "format": "{title}"	
 	 },
 	"clock": {
 		"format": "{:%R 󰃭 %d·%m·%y}",
@@ -72,7 +72,7 @@
     		//"tooltip": "{ifname}",
     		//"tooltip-format": "{essid}",
     		"interval": 2
-  	}
+  	},
 }
 }
 
