@@ -54,6 +54,7 @@
 	        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
 	      },
 	      "scroll-step": 1,
+	      "on-click": "pavucontrol"
 	 },
 
 	"battery": {
@@ -69,6 +70,7 @@
 	 },
 	 "network": {
     		"format": "󰖩 {essid}",
+		"on-click": "kitty nmtui",
     		//"tooltip": "{ifname}",
     		//"tooltip-format": "{essid}",
     		"interval": 2
