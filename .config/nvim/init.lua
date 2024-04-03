@@ -1,8 +1,9 @@
-require("plugins")
+require("plugins") 
 require("keymaps")
 
--- Start fugitive
---require("vim-fugitive").setup
+-- Start vim-cmp
+
+require('nvim-cmp')
 
 -- Start lualine
 
@@ -11,8 +12,6 @@ require('lualine').setup()
 -- set colorsheme 
 
 vim.cmd [[colorscheme zenbones]]
-
---colorscheme = ghdark
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
