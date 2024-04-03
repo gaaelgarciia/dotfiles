@@ -49,7 +49,12 @@ return packer.startup(function(use)
   	},
 	}
 
-	use("wojciechkepka/vim-github-dark")
+	use {
+   	 "mcchrish/zenbones.nvim",
+     	 requires = "rktjmp/lush.nvim"
+       }
+
+	use("tpope/vim-fugitive") 
 	
 	use {
   		'nvim-lualine/lualine.nvim',

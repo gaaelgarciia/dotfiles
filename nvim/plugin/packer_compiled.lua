@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/gael/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["lush.nvim"] = {
+    loaded = true,
+    path = "/home/gael/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/gael/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -94,10 +99,15 @@ _G.packer_plugins = {
     path = "/home/gael/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["vim-github-dark"] = {
+  ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/gael/.local/share/nvim/site/pack/packer/start/vim-github-dark",
-    url = "https://github.com/wojciechkepka/vim-github-dark"
+    path = "/home/gael/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["zenbones.nvim"] = {
+    loaded = true,
+    path = "/home/gael/.local/share/nvim/site/pack/packer/start/zenbones.nvim",
+    url = "https://github.com/mcchrish/zenbones.nvim"
   }
 }
 
