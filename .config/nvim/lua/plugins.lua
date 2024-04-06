@@ -70,6 +70,26 @@ return packer.startup(function(use)
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
 	use("rafamadriz/friendly-snippets") -- useful snippets
+	
+	--Telescope
+	use {
+  		'nvim-telescope/telescope.nvim', tag = '0.1.6',
+		-- or                            , branch = '0.1.x',
+	  	requires = { {'nvim-lua/plenary.nvim'} }
+	}
+	
+	--Alpha-Nvim
+	
+	use {
+    		'goolord/alpha-nvim',
+    		config = function ()
+        	require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    	end
+	}
+
+	--Vim-Tex
+	
+	use 'lervag/vimtex'
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

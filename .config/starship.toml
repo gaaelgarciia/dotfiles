@@ -1,5 +1,4 @@
 format = """
-[  ](fg:#white)\
 $username\
 $hostname\
 $directory\
