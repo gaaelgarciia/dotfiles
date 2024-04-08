@@ -90,6 +90,20 @@ return packer.startup(function(use)
 	--Vim-Tex
 	
 	use 'lervag/vimtex'
+	
+	--Tree-Sitter
+	
+	use {
+		'nvim-treesitter/nvim-treesitter',
+        	run = function()
+            	local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            	ts_update()
+        	end,
+    	}
+	
+	--Another color-scheme
+	
+	use "rebelot/kanagawa.nvim"
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()

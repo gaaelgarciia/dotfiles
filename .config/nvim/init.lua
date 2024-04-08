@@ -23,7 +23,7 @@ require('lualine').setup()
 
 -- set colorsheme 
 
-vim.cmd [[colorscheme zenbones]]
+vim.cmd [[colorscheme kanagawa]]
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
