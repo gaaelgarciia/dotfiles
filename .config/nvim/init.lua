@@ -1,6 +1,14 @@
 require("plugins") 
 require("keymaps")
 
+--Set termguicolors
+
+vim.opt.termguicolors = true
+
+--Vim-Colorizer
+
+require'colorizer'.setup()
+
 --Vim-Latex
 
 vim.g.vimtex_view_method = "zathura"

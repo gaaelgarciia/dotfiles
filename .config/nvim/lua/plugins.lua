@@ -111,10 +111,11 @@ return packer.startup(function(use)
 
 	--MarkDown preview
 
-	-- install without yarn or npm
-
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
+	--Nvim-Colorizer
+	
+	use 'norcalli/nvim-colorizer.lua'
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
