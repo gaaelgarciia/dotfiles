@@ -69,7 +69,7 @@
 		 "format-charging": " {capacity}%"
 	 },
 	 "network": {
-    		"format": "󰖩 {essid}",
+    		"format": "󰖩 {ifname}",
 		"on-click": "kitty nmtui",
     		//"tooltip": "{ifname}",
     		//"tooltip-format": "{essid}",

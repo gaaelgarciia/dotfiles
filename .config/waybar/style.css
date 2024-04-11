@@ -4,7 +4,7 @@
     font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
     min-height: 30px;
     font-size: 16px;
-    color: black;
+    color: white;
 }
 
 
@@ -18,8 +18,8 @@ window#waybar {
 #clock, #pulseaudio, #network, #battery,
 #custom-arch, #workspaces, #window {
   border-radius: 10px;
-  background-color: white;
-  color: black;
+  background-color: #282727;
+  color: white;
   margin-top: 10px;
   margin-right: 8px;
   padding-top: 1px;
@@ -34,36 +34,36 @@ window#waybar {
 #custom-arch {
   font-size: 20px;
   margin-left: 15px;
-  color: black;
+  color: white;
   padding-right: 18px;
 }
 
 
 #workspaces button {
     padding: 0 10px;
-    color: black;
+    color: white;
 }
 
 #clock {
-    color: black;
+    color: white;
 }
 
 #window {
-    color: black;
+    color: white;
 }
 
 #pulseaudio {
-	color: black;	
+	color: white;	
 }
 
 #battery {
-    color: black;
+    color: white;
     margin-right: 10px;
     padding-right: 15px;
 }
 
 #network {
-    color: black;
+    color: white;
     padding-right: 20px;
 }
 
