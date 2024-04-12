@@ -16,7 +16,7 @@ window#waybar {
 
 
 #clock, #pulseaudio, #network, #battery,
-#custom-arch, #workspaces, #window {
+#custom-arch, #workspaces, #window, #language {
   border-radius: 10px;
   background-color: #282727;
   color: white;
@@ -66,4 +66,5 @@ window#waybar {
     color: white;
     padding-right: 20px;
 }
+
 
