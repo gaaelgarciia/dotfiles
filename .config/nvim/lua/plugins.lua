@@ -116,6 +116,10 @@ return packer.startup(function(use)
 	--Nvim-Colorizer
 	
 	use 'norcalli/nvim-colorizer.lua'
+	
+	--
+	
+	use 'onsails/lspkind.nvim'
 
 	if PACKER_BOOTSTRAP then
 		require("packer").sync()
