@@ -1,7 +1,6 @@
 * {
     border: none;
-    font-family: 'Fira Code, Regular', 'Symbols Nerd Font Mono';
-    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+    font-family:"JetBrainsMono Nerd Font";
     min-height: 30px;
     font-size: 16px;
     color: white;
@@ -9,7 +8,7 @@
 
 
 window#waybar {
-    background: transparent;
+    background: #1f1e1e;
     color: white;
 }
 
@@ -18,9 +17,10 @@ window#waybar {
 #clock, #pulseaudio, #network, #battery,
 #custom-arch, #workspaces, #window, #language {
   border-radius: 10px;
-  background-color: #282727;
+  background-color: transparent;
   color: white;
-  margin-top: 10px;
+  margin-top: 2px;
+  margin-bottom: 2px;
   margin-right: 8px;
   padding-top: 1px;
   padding-left: 10px;

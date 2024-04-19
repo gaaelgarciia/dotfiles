@@ -1,13 +1,13 @@
 {
   "yags-general": {
-    "img": "https://i.gifer.com/7gxM.gif",
-    "title": "Start Page",
+    "img": "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHB5ZDBpOHY4OWFlMHhuY296eGc0anc2MWJ3MmppajF2cHN3c3lmciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l2SpSnNBoQCcF2SzK/giphy.gif",
+    "title": "",
     "displayImg": true,
     "font": "Quicksand",
     "fontSize": 1
   },
   "yags-search": {
-    "placeholder": "Search the web",
+    "placeholder": "",
     "engine": "google",
     "forwardingLookup": {
       "/": "/",
@@ -63,11 +63,11 @@
   "yags-surface": {
     "shadow": {
       "amount": 1,
-      "blur": 0,
+      "blur": 11,
       "offset": 0,
-      "shadow": "0px 0px 0px #777777"
+      "shadow": "0px 0px 11px #777777"
     },
-    "borderRadius": 10,
+    "borderRadius": 0,
     "maxWidth": 1380
   },
   "yags-bookmarks": [
