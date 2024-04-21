@@ -23,7 +23,7 @@
 	  "format": "{title}"	
 	 },
 	 "hyprland/language": {
-		    "format": "{short} {variant}",
+		    "format": "  {short} {variant}",
 	},
 	"clock": {
 		"format": "{:%R 󰃭 %d·%m·%y}",
@@ -50,7 +50,7 @@
         	}
    	 },	
     	"pulseaudio": {
-   		 "format": "{volume}% {icon}",
+   		 "format": "{icon}  {volume}%",
   		  "format-bluetooth": "{volume}% {icon}",
   		  "format-muted": "",
 		    "format-icons": {
@@ -78,7 +78,7 @@
 		 "format-charging": " {capacity}%"
 	 },
 	 "network": {
-    		"format": "󰖩 {essid}",
+    		"format": "󰖩 {ifname}",
 		"on-click": "kitty nmtui",
     		//"tooltip": "{ifname}",
     		//"tooltip-format": "{essid}",

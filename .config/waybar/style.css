@@ -8,7 +8,8 @@
 
 
 window#waybar {
-    background: #1f1e1e;
+    /*background: #1f1e1e;*/
+    background: transparent; 
     color: white;
 }
 
@@ -17,9 +18,10 @@ window#waybar {
 #clock, #pulseaudio, #network, #battery,
 #custom-arch, #workspaces, #window, #language {
   border-radius: 10px;
-  background-color: transparent;
+  background-color: #1f1e1e;
+  border: 2px solid #969393;
   color: white;
-  margin-top: 2px;
+  margin-top: 4px;
   margin-bottom: 2px;
   margin-right: 8px;
   padding-top: 1px;
@@ -64,7 +66,7 @@ window#waybar {
 
 #network {
     color: white;
-    padding-right: 20px;
+   /* padding-right: 20px; */
 }
 
 
