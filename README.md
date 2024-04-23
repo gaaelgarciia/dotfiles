@@ -1,6 +1,8 @@
 # dotfiles
 This is a repository dedicated to my .config files  
 
+THE INSTALL.SH and SETUP.SH ARE IN A VERY EARLY STAGE, DO NOT USE IT
+
 Distro: EndevourOS  
 Terminal: Kitty   
 Tool bar: Waybar  
