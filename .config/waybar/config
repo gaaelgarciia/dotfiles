@@ -1,24 +1,28 @@
 {
     "position": "top", 
     "height": 30,
-    "modules-left": ["custom/arch","hyprland/workspaces", "hyprland/language"],
+    "modules-left": ["hyprland/workspaces",
+    "memory", "tray"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["clock","pulseaudio","network","battery"],
+    "modules-right": ["hyprland/language","clock","pulseaudio","network","battery"],
     // Modules configuration
 	 "custom/arch": {
 	          "format": "",
         	  "tooltip": false,
           	"on-click": "exec wlogout"
 	 },
+   
 	"hyprland/workspaces": {
 		  "all-outputs": true,
-	      "format": "{name}",
-	      "format": "{icon}",
-	      "format-icons": {
-	        "active": "",
-	        "default": ""
-	      }
-	 },
+	      "format": "{name}", 
+	 }, 
+  "memory": {
+    "format": " {percentage}%"
+  },
+  "tray": {
+      "icon-size": 21,
+	    "spacing": 10
+    },
 	 "hyprland/window":{
 	  "format": "{title}"	
 	 },
@@ -79,7 +83,7 @@
 	 },
 	 "network": {
     		"format": "󰖩 {ifname}",
-		"on-click": "kitty nmtui",
+		    "on-click": "kitty nmtui",
     		//"tooltip": "{ifname}",
     		//"tooltip-format": "{essid}",
     		"interval": 2

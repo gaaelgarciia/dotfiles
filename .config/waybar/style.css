@@ -1,29 +1,29 @@
 * {
     border: none;
     font-family:"JetBrainsMono Nerd Font";
-    min-height: 30px;
-    font-size: 16px;
+    font-weight: bold;
+    /* min-height: 30px; */
+    font-size: 15px;
     color: white;
 }
 
 
 window#waybar {
     /*background: #1f1e1e;*/
-    background: transparent; 
+    background: #222222; 
     color: white;
 }
 
 
-
 #clock, #pulseaudio, #network, #battery,
-#custom-arch, #workspaces, #window, #language {
+#custom-arch, #workspaces, #window, #language, #cpu, #memory, #tray{
   border-radius: 10px;
-  background-color: #1f1e1e;
-  border: 2px solid #969393;
+  /* background-color: #1f1e1e; */
+  /* border: 2px solid #969393; */
   color: white;
   margin-top: 4px;
   margin-bottom: 2px;
-  margin-right: 8px;
+  margin-right: 5px;
   padding-top: 1px;
   padding-left: 10px;
   padding-right: 10px;
@@ -31,6 +31,8 @@ window#waybar {
 
 #workspaces {
   padding-right: 10px;
+  border-radius: 0px;
+  margin-left: 5px;
 }
 
 #custom-arch {
@@ -43,7 +45,16 @@ window#waybar {
 
 #workspaces button {
     padding: 0 10px;
-    color: white;
+    color: #8B8B8B;
+}
+#workspaces button.active {
+  background: #969393;
+  color: red;
+}
+
+#workspaces button:hover {
+  background: black;
+  color: red;
 }
 
 #clock {
