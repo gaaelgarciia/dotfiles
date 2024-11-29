@@ -9,5 +9,5 @@ FM: Ranger/Nemo
 FE: Nvim with LazyVim
 Pdf Reader: Yazi
 
->[!> [!WARNING]
+>[!WARNING]
 > THE INSTALL.SH and SETUP.SH ARE IN A VERY EARLY STAGE, DO NOT USE IT
