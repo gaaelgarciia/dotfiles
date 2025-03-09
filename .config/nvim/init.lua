@@ -2,3 +2,4 @@
 require("config.lazy")
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[au BufRead,BufNewFile *.lp set filetype=clingo]])
