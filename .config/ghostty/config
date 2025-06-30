@@ -1,3 +1,4 @@
-theme = GruvBoxDarkHard
+theme = Kanagawa Dragon
 macos-titlebar-style = hidden
 background-opacity = 0.95
+font-size = 15
