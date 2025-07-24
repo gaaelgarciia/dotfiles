@@ -20,4 +20,11 @@ return {
       -- refer to the configuration section below
     },
   },
+  {
+    "folke/which-key.nvim",
+  },
+  {
+    "ibhagwan/fzf-lua",
+  },
+  
 }
