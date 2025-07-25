@@ -1,0 +1,34 @@
+# Kanagawa Dragon minimal + info de lenguajes
+format = """
+$user$directory$git_branch$python$nodejs$rust$java$character
+"""
+
+[directory]
+style = "fg:#8ba4b0"  # DragonBlue
+truncate_to_repo = false
+
+[git_branch]
+symbol = " "  # opcional
+style = "fg:#c4b28a"  # DragonYellow
+
+[character]
+success_symbol = "[❯](fg:#c4746e)"  # DragonRed
+error_symbol = "[❯](fg:#e46876)"    # Bright DragonRed
+
+# --- Python env & version ---
+[python]
+format = '[\($virtualenv\) ](fg:#8ea4a2)'  # DragonCyan
+version_format = "v${raw}"
+style = "fg:#8ea4a2"
+disabled = false
+
+# --- Rust ---
+[rust]
+format = '[rust $version ](fg:#8a9a7b)'  # DragonGreen
+disabled = false
+
+# --- Java ---
+[java]
+format = '[java $version ](fg:#a292a3)'  # DragonPurple
+disabled = false
+
