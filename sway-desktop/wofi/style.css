@@ -1,0 +1,41 @@
+window {
+    margin: 10px;
+    border: 2px solid #c5c9c5;  /* warm beige border */
+    background-color: #181616;  /* deep background */
+    font-family: Iosevka Term;
+    font-size: 16px;
+}
+
+#outer-box, #inner-box, #scroll {
+    margin: 5px;
+    background-color: #181616;
+    border: none;
+}
+
+#input {
+    margin: 8px;
+    padding: 6px 10px;
+    background-color: #181616;  
+    color: #c5c9c5;
+    border: 1px solid #363646;
+    border-radius: 0px;
+}
+
+#entry {
+    padding: 6px 10px;
+    background-color: #181616;
+    color: #c5c9c5;
+}
+
+#entry:selected {
+    background-color: #223249;
+}
+
+#text {
+    color: #c5c9c5;
+}
+
+#text:selected {
+    color: #a3d4d5;
+}
+

@@ -1,0 +1,38 @@
+{
+    "position": "top",
+    "height": 30,
+    "modules-left": ["sway/workspaces", "clock"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["memory","cpu","sway/language","pulseaudio","network"],
+
+	"sway/workspaces": {
+		"all-outputs": true,
+	      "format": "{name}",
+	},
+	"sway/window":{
+	  "format": "{title}"
+	},
+	"sway/language": {
+		    "format": "|kb {short} {variant}",
+	},
+  "memory": {
+    "format": "ram {used}/{total}GiB|"
+  },
+  "cpu": {
+    "format": "cpu {usage}%",
+    "interval": 2
+  },
+	"clock": {
+		"format": "{:%R %d/%m}"
+   	},
+  "pulseaudio": {
+   		 "format": "|vol {volume}%",
+        "on-click": "pavucontrol"
+	},
+	 "network": {
+    		"format": "|{ifname}",
+		    "on-click": "kitty nmtui",
+    		"interval": 2
+  	},
+}
+}

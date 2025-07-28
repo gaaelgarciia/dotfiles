@@ -1,0 +1,9 @@
+show=drun
+width=30%
+height=40%
+lines=10
+columns=1
+insensitive=true
+term=kitty
+no_layer=true
+
