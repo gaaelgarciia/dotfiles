@@ -9,8 +9,7 @@ set $term ghostty
 set $menu wofi 
 
 output DP-3 resolution 1920x1080@144Hz position 0 0
-output * bg ~/.config/hypr/wallpapers/wallhaven-vmrx8p.jpg fill
-
+output * bg ~/.config/sway/wallhaven-vmrx8p.jpg fill 
 ### Idle configuration
 # Example configuration:
 #
@@ -200,8 +199,8 @@ bar {
 	swaybar_command /usr/bin/waybar
 }
 
-bindsym $mod+p exec ~/.config/sway/scripts/powermenu.sh
-
+# bindsym $mod+p exec ~/.config/sway/scripts/powermenu.sh
+bindsym $mod+p exec ~/git_clones/pmenu/target/debug/pmenu
 exec "workspace 1; exec qutebrowser"
 exec "workspace 2; exec ghostty"
 
@@ -211,5 +210,4 @@ client.unfocused #202020 #202020 #9b8d7f #202020 #202020
 
 default_border pixel 1
 default_floating_border pixel 1
-
 include /etc/sway/config.d/*
