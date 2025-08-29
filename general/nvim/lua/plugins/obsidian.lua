@@ -10,8 +10,11 @@ return {
 		workspaces = {
 			{
 				name = "obsidian-notes",
-				path = "~/Class/obsidian-notes",
+				path = "~/notes/obsidian-notes",
 			},
 		},
+		picker = { name = "fzf-lua" },
+		disable_frontmatter = true,
+		ui = { enable = false },
 	},
 }
