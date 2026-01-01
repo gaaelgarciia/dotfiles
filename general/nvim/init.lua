@@ -60,3 +60,28 @@ vim.keymap.set("n", ",st", function()
 	vim.wo.winfixheight = true
 	vim.cmd.term()
 end)
+
+-- Hot reload for python code
+-- Reusable terminal for running Python files
+local term_win, term_buf, prev_win
+
+vim.keymap.set("n", "<leader>r", function()
+	-- Always get the file path BEFORE entering terminal
+	local file = vim.fn.expand("%:p")
+	vim.cmd("w")
+	prev_win = vim.api.nvim_get_current_win()
+
+	-- Create terminal if it doesn't exist
+	if not term_buf or not vim.api.nvim_buf_is_valid(term_buf) then
+		vim.cmd("30vs | terminal")
+		term_win = vim.api.nvim_get_current_win()
+		term_buf = vim.api.nvim_get_current_buf()
+	end
+
+	-- Reuse terminal
+	vim.api.nvim_set_current_win(term_win)
+	vim.cmd("startinsert")
+	vim.api.nvim_chan_send(vim.b[term_buf].terminal_job_id, "python3 " .. file .. "\n")
+	vim.api.nvim_set_current_win(prev_win)
+	vim.cmd("stopinsert") -- exits insert mode and goes to normal mode
+end)
