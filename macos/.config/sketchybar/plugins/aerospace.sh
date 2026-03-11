@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
-# make sure it's executable with:
-# chmod +x ~/.config/sketchybar/plugins/aerospace.sh
-
 if [ "$1" = "$FOCUSED_WORKSPACE" ]; then
-  sketchybar --set $NAME label.color=0xff98971a
+  sketchybar --set $NAME label.color=0xff181616 background.color=0xffc5c9c5
 else
-  sketchybar --set $NAME label.color=0xffffffff
+  sketchybar --set $NAME label.color=0xffc5c9c5 background.color=0xffffff
 fi

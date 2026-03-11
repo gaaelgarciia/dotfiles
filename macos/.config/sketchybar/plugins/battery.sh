@@ -1,28 +1,19 @@
 #!/bin/sh
 
-PERCENTAGE="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
+PERCENTAGE="$(pmset -g batt | grep -Eo '\d+%' | cut -d% -f1)"
 CHARGING="$(pmset -g batt | grep 'AC Power')"
 
-if [ "$PERCENTAGE" = "" ]; then
+if [ -z "$PERCENTAGE" ]; then
   exit 0
 fi
 
-case "${PERCENTAGE}" in
-  9[0-9]|100) ICON=""
-  ;;
-  [6-8][0-9]) ICON=""
-  ;;
-  [3-5][0-9]) ICON=""
-  ;;
-  [1-2][0-9]) ICON=""
-  ;;
-  *) ICON=""
-esac
-
-if [[ "$CHARGING" != "" ]]; then
-  ICON=""
+# Check if charging and set label accordingly
+if [ -n "$CHARGING" ]; then
+  LABEL="ac ${PERCENTAGE}%"
+else
+  LABEL="bat ${PERCENTAGE}%"
 fi
 
-# The item invoking this script (name $NAME) will get its icon and label
-# updated with the current battery status
-sketchybar --set "$NAME" icon="$ICON" label="${PERCENTAGE}%"
+# Update the item that called this script
+sketchybar --set "$NAME" label="$LABEL"
+

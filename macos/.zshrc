@@ -4,6 +4,9 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export JAVA_HOME="/opt/homebrew/opt/openjdk@23"
 export PATH="$JAVA_HOME/bin:$PATH"
+export EDITOR=nvim
+export PATH="$(brew --prefix bison)/bin:$PATH"
+
 
 alias tapa_on="sudo pmset disablesleep 0"
 alias tapa_off="sudo pmset disablesleep 1"
@@ -11,6 +14,7 @@ alias ls="eza"
 alias la="eza -a"
 alias ll="eza -l"
 alias lla="eza -l -a"
+alias decorations="m"
 eval "$(zoxide init zsh)"
 unsetopt inc_append_history  # Opcional: Evita mensajes de historial
 alias zed="open -a /Applications/Zed.app -n"
