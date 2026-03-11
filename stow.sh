@@ -1,21 +1,30 @@
 #!/bin/sh
 
-echo "Select the desired config: [1] macos [2] sway [3] i3 [4] general"
+echo "Select the desired config:"
+echo "[1] macos"
+echo "[2] sway"
+echo "[3] i3"
+echo "[4] general"
+
 read option
 
-if [$option = 1]; then 
-    cd macos 
-    stow .
-fi 
-if [$option = 2]; then 
-    cd i3wm-x220
-    stow .
-fi 
-if [$option = 3]; then 
-    cd sway-desktop 
-    stow .
-fi 
-if [$option = 4]; then 
-    cd general 
-    stow -d . -t ~/.config
-fi
+case "$option" in
+    1)
+        cd macos || exit
+        ;;
+    2)
+        cd i3wm-x220 || exit
+        ;;
+    3)
+        cd sway-desktop || exit
+        ;;
+    4)
+        cd general || exit
+        ;;
+    *)
+        echo "Invalid option"
+        exit 1
+        ;;
+esac
+
+stow .

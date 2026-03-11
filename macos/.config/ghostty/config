@@ -1,4 +1,7 @@
 theme = Kanagawa Dragon
-macos-titlebar-style = hidden
-background-opacity = 0.95
-font-size = 15
+background-opacity = 0.98
+font-size = 24
+window-decoration = false 
+macos-window-shadow = false
+# macos-titlebar-style = hidden
+font-family = Iosevka Term
