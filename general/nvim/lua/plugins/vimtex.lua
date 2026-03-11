@@ -1,13 +1,18 @@
 return {
 	{
 		"lervag/vimtex",
-		lazy = false, -- we don't want to lazy load VimTeX
-		-- tag = "v2.15", -- uncomment to pin to a specific release
+		lazy = false,
 		init = function()
-			-- VimTeX configuration goes here, e.g.
-			vim.g.vimtex_view_method = "skim"
-			vim.g.vimtex_compiler_latexmk = { engine = "xelatex" }
-			-- To prevent the warning window to appear
+			if vim.fn.has("macunix") == 1 then
+				vim.g.vimtex_view_method = "skim"
+			elseif vim.fn.has("unix") == 1 then
+				vim.g.vimtex_view_method = "zathura"
+			end
+
+			vim.g.vimtex_compiler_latexmk = {
+				engine = "xelatex",
+			}
+			-- To prevent warning window
 			vim.g.vimtex_quickfix_mode = 0
 		end,
 	},
