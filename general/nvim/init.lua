@@ -3,7 +3,7 @@ require("config.lazy")
 vim.cmd.colorscheme("kanagawa-dragon")
 vim.cmd([[au BufRead,BufNewFile *.lp set filetype=clingo]])
 
-vim.opt.shiftwidth = 2
+vim.o.shiftwidth = 4
 vim.o.breakindent = true
 
 vim.g.netrw_winsize = 20
