@@ -1,6 +1,6 @@
 # Kanagawa Dragon minimal + info de lenguajes
 format = """
-$user$directory$git_branch$python$nodejs$rust$java$character
+$hostname$directory$git_branch$python$nodejs$rust$java$character
 """
 
 [directory]
@@ -8,7 +8,6 @@ style = "fg:#8ba4b0"  # DragonBlue
 truncate_to_repo = false
 
 [git_branch]
-symbol = " "  # opcional
 style = "fg:#c4b28a"  # DragonYellow
 
 [character]
@@ -31,4 +30,3 @@ disabled = false
 [java]
 format = '[java $version ](fg:#a292a3)'  # DragonPurple
 disabled = false
-
