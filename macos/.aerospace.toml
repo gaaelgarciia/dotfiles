@@ -36,7 +36,7 @@ automatically-unhide-macos-hidden-apps = false
 [mode.main.binding]
 
     alt-t= '''exec-and-forget open -n /Applications/Ghostty.app'''
-    alt-p = ['exec-and-forget $HOME/git_clones/pmenu/target/debug/pmenu','focus dfs-next']
+    alt-p = '''exec-and-forget $HOME/git_clones/pmenu/target/release/pmenu'''
     alt-shift-f = 'fullscreen'
     alt-slash = 'layout tiles horizontal vertical'
     alt-comma = 'layout accordion horizontal vertical'
@@ -89,3 +89,7 @@ automatically-unhide-macos-hidden-apps = false
     down = 'volume down'
     up = 'volume up'
     shift-down = ['volume set 0', 'mode main']
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.finder'
+    run = 'layout floating'
