@@ -4,7 +4,7 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 export JAVA_HOME="/opt/homebrew/opt/openjdk@23"
 export PATH="$JAVA_HOME/bin:$PATH"
-export EDITOR=nvim
+export EDITOR="nvim"
 export PATH="$(brew --prefix bison)/bin:$PATH"
 
 
