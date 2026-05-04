@@ -8,9 +8,11 @@ vim.pack.add({
 	-- "https://github.com/kaarmu/typst.vim",
 	-- "https://github.com/mbbill/undotree",
 	"https://github.com/rebelot/kanagawa.nvim",
+	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/kdheepak/lazygit.nvim",
 	"https://github.com/mikavilpas/yazi.nvim",
+	"https://github.com/rafamadriz/friendly-snippets",
 	"https://github.com/lervag/vimtex",
 	{
 		src = "https://github.com/saghen/blink.cmp",
@@ -18,7 +20,7 @@ vim.pack.add({
 	},
 })
 
--- Removed unused packages
+-- Remove unused packages
 for _, name in ipairs(
   vim.iter(vim.pack.get())
     :filter(function(x) return not x.active end)
@@ -28,10 +30,12 @@ for _, name in ipairs(
   vim.pack.del({name})
 end
 
+
 require("blink.cmp").setup({
 		keymap = { preset = "super-tab" },
 		appearance = {
 			nerd_font_variant = "mono",
+			use_nvim_cmp_as_default = true,
 		},
 		completion = { documentation = { auto_show = false } },
 		sources = {
@@ -56,36 +60,8 @@ vim.g.vimtex_compiler_latexmk = {
 -- Disable quickfix auto-open
 vim.g.vimtex_quickfix_mode = 0
 
-
-
--- require("yazi").setup({
--- 	dependencies = {
--- 		{ "nvim-lua/plenary.nvim"},
--- 	},
--- 	keys = {
--- 		{
--- 			"<leader>-",
--- 			mode = { "n", "v" },
--- 			"<cmd>Yazi<cr>",
--- 			desc = "Open yazi at the current file",
--- 		},
--- 		{
--- 			-- Open in the current working directory
--- 			"<leader>cw",
--- 			"<cmd>Yazi cwd<cr>",
--- 			desc = "Open the file manager in nvim's working directory",
--- 		},
--- 		{
--- 			"<c-up>",
--- 			"<cmd>Yazi toggle<cr>",
--- 			desc = "Resume the last yazi session",
--- 		},
--- 	},
--- })
---
-
 vim.keymap.set("n","<leader>lg", "<cmd>LazyGit<cr>", {desc = "LazyGit"})
---
+
 require("conform").setup({
 	opts = {
 		formatters_by_ft = {
