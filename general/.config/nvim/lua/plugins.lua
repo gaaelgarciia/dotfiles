@@ -1,79 +1,90 @@
 vim.g.mapleader = " "
+
 vim.pack.add({
 	"https://github.com/ibhagwan/fzf-lua",
 	"https://github.com/folke/which-key.nvim",
 	"https://github.com/OXY2DEV/markview.nvim",
 	"https://github.com/nvim-lualine/lualine.nvim",
-	"https://github.com/kaarmu/typst.vim",
-	"https://github.com/mbbill/undotree",
+	-- "https://github.com/kaarmu/typst.vim",
+	-- "https://github.com/mbbill/undotree",
 	"https://github.com/rebelot/kanagawa.nvim",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/kdheepak/lazygit.nvim",
-	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/mikavilpas/yazi.nvim",
-	-- "https://github.com/saghen/blink.cmp",
-})
-
--- require("blink").setup({
--- 	dependencies = { "rafamadriz/friendly-snippets" },
--- 	version = "1.*",
--- 	opts = {
--- 		keymap = { preset = "super-tab" },
--- 		appearance = {
--- 			nerd_font_variant = "mono",
--- 		},
--- 		completion = { documentation = { auto_show = false } },
--- 		sources = {
--- 			default = { "lsp", "path", "snippets", "buffer" },
--- 		},
--- 		fuzzy = { implementation = "prefer_rust_with_warning" },
--- 	},
--- 	opts_extend = { "sources.default" },
--- })
-
-require("yazi").setup({
-	dependencies = {
-		{ "nvim-lua/plenary.nvim"},
-	},
-	keys = {
-		{
-			"<leader>-",
-			mode = { "n", "v" },
-			"<cmd>Yazi<cr>",
-			desc = "Open yazi at the current file",
-		},
-		{
-			-- Open in the current working directory
-			"<leader>cw",
-			"<cmd>Yazi cwd<cr>",
-			desc = "Open the file manager in nvim's working directory",
-		},
-		{
-			"<c-up>",
-			"<cmd>Yazi toggle<cr>",
-			desc = "Resume the last yazi session",
-		},
+	"https://github.com/lervag/vimtex",
+	{
+		src = "https://github.com/saghen/blink.cmp",
+		version = vim.version.range("1.*"),
 	},
 })
---
--- require("lazygit").setup({
--- 	cmd = {
--- 		"LazyGit",
--- 		"LazyGitConfig",
--- 		"LazyGitCurrentFile",
--- 		"LazyGitFilter",
--- 		"LazyGitFilterCurrentFile",
--- 	},
--- 	-- optional for floating window border decoration
+
+-- Removed unused packages
+for _, name in ipairs(
+  vim.iter(vim.pack.get())
+    :filter(function(x) return not x.active end)
+    :map(function(x) return x.spec.name end)
+    :totable()
+) do
+  vim.pack.del({name})
+end
+
+require("blink.cmp").setup({
+		keymap = { preset = "super-tab" },
+		appearance = {
+			nerd_font_variant = "mono",
+		},
+		completion = { documentation = { auto_show = false } },
+		sources = {
+			default = { "lsp", "path", "snippets", "buffer" },
+		},
+		fuzzy = { implementation = "prefer_rust_with_warning" },
+})
+
+-- Vimtex--
+-- Viewer depending on OS
+if vim.fn.has("macunix") == 1 then
+    vim.g.vimtex_view_method = "skim"
+elseif vim.fn.has("unix") == 1 then
+    vim.g.vimtex_view_method = "zathura"
+end
+
+-- Compiler settings
+vim.g.vimtex_compiler_latexmk = {
+    engine = "xelatex",
+}
+
+-- Disable quickfix auto-open
+vim.g.vimtex_quickfix_mode = 0
+
+
+
+-- require("yazi").setup({
 -- 	dependencies = {
--- 		"nvim-lua/plenary.nvim",
+-- 		{ "nvim-lua/plenary.nvim"},
 -- 	},
--- 	-- setting the keybinding for LazyGit with 'keys' is recommended in
--- 	-- order to load the plugin when the command is run for the first time
 -- 	keys = {
--- 		{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+-- 		{
+-- 			"<leader>-",
+-- 			mode = { "n", "v" },
+-- 			"<cmd>Yazi<cr>",
+-- 			desc = "Open yazi at the current file",
+-- 		},
+-- 		{
+-- 			-- Open in the current working directory
+-- 			"<leader>cw",
+-- 			"<cmd>Yazi cwd<cr>",
+-- 			desc = "Open the file manager in nvim's working directory",
+-- 		},
+-- 		{
+-- 			"<c-up>",
+-- 			"<cmd>Yazi toggle<cr>",
+-- 			desc = "Resume the last yazi session",
+-- 		},
 -- 	},
 -- })
+--
+
+vim.keymap.set("n","<leader>lg", "<cmd>LazyGit<cr>", {desc = "LazyGit"})
 --
 require("conform").setup({
 	opts = {

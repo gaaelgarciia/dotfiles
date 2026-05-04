@@ -1,3 +1,5 @@
+-- Set colorscheme and transparency
+
 vim.cmd.colorscheme("kanagawa-dragon")
 vim.cmd [[
   highlight Normal guibg=none
@@ -22,12 +24,8 @@ vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "grey" })
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 vim.keymap.set("n","<leader>-","<cmd>Ex %:p:h<CR>", {desc = "launch Netrw on the current file dir"})
-
 vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = "Toggle Zen Mode" })
-
-
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-
 vim.keymap.set("n", "<S-h>", ":-tabnext<CR>", { desc = "Move to the previous tab" })
 vim.keymap.set("n", "<S-l>", ":+tabnext<CR>", { desc = "Move to the next tab" })
 
