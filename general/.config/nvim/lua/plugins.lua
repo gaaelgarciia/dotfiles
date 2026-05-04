@@ -21,64 +21,65 @@ vim.pack.add({
 })
 
 -- Remove unused packages
-for _, name in ipairs(
-  vim.iter(vim.pack.get())
-    :filter(function(x) return not x.active end)
-    :map(function(x) return x.spec.name end)
-    :totable()
-) do
-  vim.pack.del({name})
+for _, name in
+	ipairs(vim.iter(vim.pack.get())
+		:filter(function(x)
+			return not x.active
+		end)
+		:map(function(x)
+			return x.spec.name
+		end)
+		:totable())
+do
+	vim.pack.del({ name })
 end
 
-
 require("blink.cmp").setup({
-		keymap = { preset = "super-tab" },
-		appearance = {
-			nerd_font_variant = "mono",
-			use_nvim_cmp_as_default = true,
-		},
-		completion = { documentation = { auto_show = false } },
-		sources = {
-			default = { "lsp", "path", "snippets", "buffer" },
-		},
-		fuzzy = { implementation = "prefer_rust_with_warning" },
+	keymap = { preset = "super-tab" },
+	appearance = {
+		nerd_font_variant = "mono",
+		use_nvim_cmp_as_default = true,
+	},
+	completion = { documentation = { auto_show = false } },
+	sources = {
+		default = { "lsp", "path", "snippets", "buffer" },
+	},
+	fuzzy = { implementation = "prefer_rust_with_warning" },
 })
 
 -- Vimtex--
 -- Viewer depending on OS
 if vim.fn.has("macunix") == 1 then
-    vim.g.vimtex_view_method = "skim"
+	vim.g.vimtex_view_method = "skim"
 elseif vim.fn.has("unix") == 1 then
-    vim.g.vimtex_view_method = "zathura"
+	vim.g.vimtex_view_method = "zathura"
 end
 
 -- Compiler settings
 vim.g.vimtex_compiler_latexmk = {
-    engine = "xelatex",
+	engine = "xelatex",
 }
 
 -- Disable quickfix auto-open
 vim.g.vimtex_quickfix_mode = 0
 
-vim.keymap.set("n","<leader>lg", "<cmd>LazyGit<cr>", {desc = "LazyGit"})
+vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
 
 require("conform").setup({
-	opts = {
-		formatters_by_ft = {
-			lua = { "stylua" },
-			-- Conform will run multiple formatters sequentially
-			python = { "isort", "black" },
-			-- You can customize some of the format options for the filetype (:help conform.format)
-			rust = { "rustfmt", lsp_format = "fallback" },
-			-- Conform will run the first available formatter
-			javascript = { "prettierd", "prettier", stop_after_first = true },
-		},
-		-- I want to do a command in order to format only when i want to
-		format_on_save = {
-			-- These options will be passed to conform.format()
-			timeout_ms = 500,
-			lsp_format = "fallback",
-		},
+	formatters_by_ft = {
+		lua = { "stylua" },
+		-- Conform will run multiple formatters sequentially
+		python = { "black", "isort" },
+		-- You can customize some of the format options for the filetype (:help conform.format)
+		rust = { "rustfmt", lsp_format = "fallback" },
+		-- Conform will run the first available formatter
+		javascript = { "prettierd", "prettier", stop_after_first = true },
+	},
+	-- I want to do a command in order to format only when i want to
+	format_on_save = {
+		-- These options will be passed to conform.format()
+		timeout_ms = 500,
+		lsp_format = "fallback",
 	},
 })
 require("kanagawa").setup({ opts = { transparent = true } })
