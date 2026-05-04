@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 vim.pack.add({
 	"https://github.com/ibhagwan/fzf-lua",
 	"https://github.com/folke/which-key.nvim",
@@ -13,7 +14,6 @@ vim.pack.add({
 	-- "https://github.com/saghen/blink.cmp",
 })
 
-vim.cmd.colorscheme("kanagawa-dragon")
 -- require("blink").setup({
 -- 	dependencies = { "rafamadriz/friendly-snippets" },
 -- 	version = "1.*",

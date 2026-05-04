@@ -1,2 +1,3 @@
 */nvim/spell
 general/.config/nvim/lazy-lock.json
+*.DS_STORE
