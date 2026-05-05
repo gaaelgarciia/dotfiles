@@ -9,6 +9,8 @@ vim.cmd([[
 ]])
 
 --status line--
+--
+-- Get current Vim mode
 local function mode()
 	local modes = {
 		n = "NORMAL",
@@ -22,26 +24,54 @@ local function mode()
 	}
 	return modes[vim.api.nvim_get_mode().mode] or "UNKNOWN"
 end
+local git_branch_cache = ""
+
+-- Get current Git branch
+local function update_git_branch()
+	local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD")[1]
+	if branch == "" or branch == nil then
+		git_branch_cache = ""
+	else
+		git_branch_cache = branch
+	end
+end
+
+local function git_branch()
+	return git_branch_cache
+end
 
 vim.cmd([[
   highlight StatusLine guifg=#c5c9c5 guibg=none
 ]])
 
 local statusline = {
-	"%#MyMode# %{v:lua.mode()} :: ",
-	"%f",
-	"%r",
-	"%m",
-	"%=",
-	"<Never stop learning>",
+	"%#StatusLine# %{v:lua.mode()} |",
+	" %{v:lua.git_branch()} |",
+	" %t",
+	" %r",
+	" %m",
 	"%=",
 	"%{&filetype} ",
-	"[%2p%%",
-	" %3l:%-2c]",
+	"[%2p%% %3l:%-2c]",
 }
 
 _G.mode = mode
+_G.git_branch = git_branch
+_G.update_git_branch = update_git_branch
 vim.o.statusline = table.concat(statusline, "")
+
+-- Update branch on events (buffer enter, write, etc.)
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "VimEnter", "FocusGained" }, {
+	callback = update_git_branch,
+})
+
+-- Update branch also if changed inside of vim with :!git ...
+vim.api.nvim_create_autocmd("ShellCmdPost", {
+	pattern = "!git*",
+	callback = function()
+		_G.update_git_branch()
+	end,
+})
 
 vim.o.shiftwidth = 4
 vim.o.breakindent = true
@@ -56,11 +86,7 @@ vim.api.nvim_set_hl(0, "LineNr", { fg = "brown" })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "grey" })
 
 -- Don't show the mode, since it's already in the status line
-vim.keymap.set("n", "<leader>-", "<cmd>Ex %:p:h<CR>", { desc = "launch Netrw on the current file dir" })
-vim.keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = "Toggle Zen Mode" })
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
-vim.keymap.set("n", "<S-h>", ":-tabnext<CR>", { desc = "Move to the previous tab" })
-vim.keymap.set("n", "<S-l>", ":+tabnext<CR>", { desc = "Move to the next tab" })
+vim.o.showmode = false
 
 -- Terminal config --
 
@@ -88,3 +114,6 @@ vim.keymap.set("n", ",st", function()
 	vim.wo.winfixheight = true
 	vim.cmd.term()
 end)
+
+-- LazyGit keymap--
+vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })

@@ -4,16 +4,13 @@ vim.pack.add({
 	"https://github.com/ibhagwan/fzf-lua",
 	"https://github.com/folke/which-key.nvim",
 	"https://github.com/OXY2DEV/markview.nvim",
-	-- "https://github.com/nvim-lualine/lualine.nvim",
-	-- "https://github.com/kaarmu/typst.vim",
-	-- "https://github.com/mbbill/undotree",
 	"https://github.com/rebelot/kanagawa.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/kdheepak/lazygit.nvim",
-	"https://github.com/mikavilpas/yazi.nvim",
 	"https://github.com/rafamadriz/friendly-snippets",
 	"https://github.com/lervag/vimtex",
+	"https://github.com/christoomey/vim-tmux-navigator",
 	{
 		src = "https://github.com/saghen/blink.cmp",
 		version = vim.version.range("1.*"),
@@ -47,24 +44,6 @@ require("blink.cmp").setup({
 	fuzzy = { implementation = "prefer_rust_with_warning" },
 })
 
--- Vimtex--
--- Viewer depending on OS
-if vim.fn.has("macunix") == 1 then
-	vim.g.vimtex_view_method = "skim"
-elseif vim.fn.has("unix") == 1 then
-	vim.g.vimtex_view_method = "zathura"
-end
-
--- Compiler settings
-vim.g.vimtex_compiler_latexmk = {
-	engine = "xelatex",
-}
-
--- Disable quickfix auto-open
-vim.g.vimtex_quickfix_mode = 0
-
-vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
-
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
@@ -82,36 +61,21 @@ require("conform").setup({
 		lsp_format = "fallback",
 	},
 })
+
 require("kanagawa").setup({ opts = { transparent = true } })
 
--- require("lualine").setup({
--- 	options = {
--- 		icons_enabled = false,
--- 		theme = "auto",
--- 		component_separators = "",
--- 		section_separators = "",
--- 	},
---
--- 	sections = {
--- 		lualine_a = { "mode" },
--- 		lualine_b = { "branch" },
--- 		lualine_c = { "filename" },
--- 		lualine_x = {
--- 			function()
--- 				encoding = vim.o.fileencoding
--- 				if encoding == "" then
--- 					return vim.bo.fileformat .. " :: " .. vim.bo.filetype
--- 				else
--- 					return encoding .. " :: " .. vim.bo.fileformat .. " :: " .. vim.bo.filetype
--- 				end
--- 			end,
--- 		},
--- 		lualine_y = { "progress" },
--- 		lualine_z = { "location" },
--- 	},
--- })
+-- Vimtex config--
+-- Viewer depending on OS
+if vim.fn.has("macunix") == 1 then
+	vim.g.vimtex_view_method = "skim"
+elseif vim.fn.has("unix") == 1 then
+	vim.g.vimtex_view_method = "zathura"
+end
 
-vim.keymap.set("n", "<leader> ", require("fzf-lua").files, { desc = "Fuzzy find files" })
-vim.keymap.set("n", "<leader>g", require("fzf-lua").live_grep, { desc = "Fuzzy find text" })
-vim.keymap.set("n", "<leader>b", require("fzf-lua").buffers, { desc = "Fuzzy find buffers" })
-vim.keymap.set("n", "<leader>h", require("fzf-lua").helptags, { desc = "Fuzzy find help-pages" })
+-- Compiler settings
+vim.g.vimtex_compiler_latexmk = {
+	engine = "xelatex",
+}
+
+-- Disable quickfix auto-open
+vim.g.vimtex_quickfix_mode = 0
