@@ -28,7 +28,14 @@ local git_branch_cache = ""
 
 -- Get current Git branch
 local function update_git_branch()
-	local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD")[1]
+	-- Check if we're inside a git repo (works even in subdirectories)
+	local inside = vim.fn.systemlist("git rev-parse --is-inside-work-tree 2>/dev/null")[1]
+
+	if inside ~= "true" then
+		git_branch_cache = "no repo"
+		return
+	end
+	local branch = vim.fn.systemlist("git rev-parse --abbrev-ref HEAD 2>/dev/null")[1]
 	if branch == "" or branch == nil then
 		git_branch_cache = ""
 	else
