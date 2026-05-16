@@ -9,8 +9,6 @@ vim.cmd([[
 ]])
 
 --status line--
---
--- Get current Vim mode
 local function mode()
 	local modes = {
 		n = "NORMAL",
@@ -24,11 +22,10 @@ local function mode()
 	}
 	return modes[vim.api.nvim_get_mode().mode] or "UNKNOWN"
 end
+
 local git_branch_cache = ""
 
--- Get current Git branch
 local function update_git_branch()
-	-- Check if we're inside a git repo (works even in subdirectories)
 	local inside = vim.fn.systemlist("git rev-parse --is-inside-work-tree 2>/dev/null")[1]
 
 	if inside ~= "true" then
