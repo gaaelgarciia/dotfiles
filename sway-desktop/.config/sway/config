@@ -9,14 +9,14 @@ set $term foot
 set $menu wofi 
 
 output DP-3 resolution 1920x1080@144Hz position 0 0
-output * bg ~/.config/sway/wallhaven-vmrx8p.jpg fill 
+output * bg ~/.config/sway/wall5.jpg fill 
 ### Idle configuration
 # Example configuration:
 #
 # exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
+#          timeout 300 'hyprlock' 
+         # timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         # before-sleep 'hyprlock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -195,10 +195,13 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Special key to take a screenshot with grim
 bindsym Print exec grim
 
-# Read `man 5 sway-bar` for more information about this section.
+set $gnome-schema org.gnome.desktop.interface
+
 bar {
 	swaybar_command /usr/bin/waybar
 }
+bindsym $mod+m exec --no-startup-id killall -SIGUSR1 waybar 
+exec --no-startup-id dunst
 
 bindsym $mod+p exec ~/git_clones/pmenu/target/debug/pmenu
 
@@ -206,9 +209,23 @@ client.focused #c5c9c5 #c5c9c5 #000000 #c5c9c5 #c5c9c5
 client.focused_inactive #202020 #202020 #9b8d7f #202020 #202020
 client.unfocused #202020 #202020 #9b8d7f #202020 #202020
 
+smart_gaps on
+gaps inner 3
+
 default_border pixel 1
+smart_borders on
 default_floating_border pixel 1
 include /etc/sway/config.d/
 
 exec swaymsg "workspace 2; exec foot;"
 exec swaymsg "workspace 1; exec librewolf;"
+
+for_window {
+  [app_id="pavucontrol"] floating enable
+}
+
+
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Materia-dark-compact'
+    gsettings set $gnome-schema font-name 'Iosevka Nerd Font 12'
+}

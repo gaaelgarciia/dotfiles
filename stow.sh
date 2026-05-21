@@ -10,8 +10,8 @@ while true; do
 
     case "$option" in
         1) dir="macos"; break ;;
-        2) dir="i3wm-x220"; break ;;
-        3) dir="sway-desktop"; break ;;
+        2) dir="sway-desktop"; break ;;
+        3) dir="i3wm-x220"; break ;;
         4) dir="general"; break ;;
         *) echo "Invalid option, try again." ;;
     esac
@@ -19,5 +19,5 @@ done
 
 cd "$dir" || exit
 # -t ~/ to set the target to the home directory in case this was colned +1 depth than the home dir
-stow -t ~/ .
+stow --adopt -t ~/ .
 # If there are existing code, --adopt is a good option
