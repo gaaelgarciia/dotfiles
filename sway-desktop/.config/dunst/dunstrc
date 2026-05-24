@@ -1,0 +1,11 @@
+[global]  
+    font = Iosevka Nerd Font 10 
+    # Position: Show notifications in the top-right corner of the primary screen  
+    offset = (5,5)
+    origin = top-right
+ 
+[notification]  
+    # Background color (hex code for dark gray)  
+    background = "#1a1a1a"  
+    # Foreground color (white text)  
+    foreground = "#ffffff" 
