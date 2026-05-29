@@ -78,6 +78,14 @@ sketchybar --add item battery right \
            --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
            --subscribe battery system_woke power_source_change
 
+sketchybar --add item sep.battery right \
+           --set sep.battery label="|" label.color=0xff888888 icon.drawing=off
+
+
+sketchybar --add item music right \
+           --set music label="loading..." update_freq=1 script="$PLUGIN_DIR/music.sh"
+	
+
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
