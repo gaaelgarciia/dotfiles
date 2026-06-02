@@ -10,7 +10,7 @@ set $menu fuzzel
 
 output DP-3 resolution 1920x1080@144Hz position 0 0
 
-output * bg ~/Pictures/walls/wall4.png fill 
+output * bg ~/.config/sway/wallpaper fill 
 
 ### Idle configuration
 # Example configuration:
@@ -167,10 +167,10 @@ mode "resize" {
     # right will grow the containers width
     # up will shrink the containers height
     # down will grow the containers height
-    bindsym $left resize shrink width 10px
+    bindsym $left resize grow width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
-    bindsym $right resize grow width 10px
+    bindsym $right resize shrink width 10px
 
     # Ditto, with arrow keys
     bindsym Left resize shrink width 10px
@@ -212,7 +212,7 @@ client.focused #c5c9c5 #c5c9c5 #000000 #c5c9c5 #c5c9c5
 client.focused_inactive #202020 #202020 #9b8d7f #202020 #202020
 client.unfocused #202020 #202020 #9b8d7f #202020 #202020
 
-bindsym $mod+shift+w exec ~/scripts/walls.sh
+bindsym $mod+shift+w exec ~/.config/sway/scripts/walls.sh
 
 smart_gaps on
 gaps inner 3
