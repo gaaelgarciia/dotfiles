@@ -3,6 +3,10 @@
     # Position: Show notifications in the top-right corner of the primary screen  
     offset = (5,5)
     origin = top-right
+    padding = 4
+    horizontal_padding = 4
+    frame_width = 1
+    notification_limit = 5
  
 [notification]  
     # Background color (hex code for dark gray)  
