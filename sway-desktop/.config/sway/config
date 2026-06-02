@@ -6,7 +6,7 @@ set $up k
 set $right l
 
 set $term foot
-set $menu wmenu-run
+set $menu fuzzel 
 
 output DP-3 resolution 1920x1080@144Hz position 0 0
 
