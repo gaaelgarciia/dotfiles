@@ -21,10 +21,10 @@
 	      "format": "|kb {short} {variant}",
   },
   "memory": {
-    "format": "r {used}::"
+    "format": "r{used}::"
   },
   "cpu": {
-    "format": "c {usage}%",
+    "format": "c{usage}%",
     "interval": 2
   },
   "clock": {
