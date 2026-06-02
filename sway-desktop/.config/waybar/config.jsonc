@@ -1,6 +1,6 @@
 {
   "position": "top",
-  "height": 30,
+  "height": 20,
   "modules-left": ["sway/workspaces", "clock"],
   "modules-center": ["sway/window"],
   "modules-right": ["memory","cpu","sway/language","pulseaudio","network"],
@@ -8,6 +8,11 @@
   "sway/workspaces": {
 	"all-outputs": true,
 	"format": "{name}",
+	"format": "{icon}{name}{icon}",
+	"format-icons": {
+		"focused": "|",
+		"default": " "
+	}
   },
   "sway/window":{
     "format": "{title}"

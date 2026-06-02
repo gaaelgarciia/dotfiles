@@ -1,37 +1,31 @@
 * {
  border: none;
-  border-radius: 0;
-  min-height: 0;
-  font-family: "Iosevka Term";
-  font-size: 16px;
-  opacity: 0.98;
-  padding: 0;
-  margin-right: 2px;
+    border-radius: 0;
+    min-width: 0;
+    min-height: 0;
+    font-family: "Iosevka Term";
+    font-size: 16px;
+    opacity: 0.98;
+    padding: 0;
+    margin-right: 2px;
 }
 
 window#waybar {
-  background: #181616;
-  color: #c5c9c5;
+    background: #181616;
+    color: #c5c9c5;
 }
 
 
 #workspaces {
-  padding-right: 10px;
-  border-radius: 0px;
-  margin-left: 5px;
+    padding-right: 10px;
+    border-radius: 0px;
+    margin-left: 5px;
 }
 
 #workspaces button {
-  color: #c5c9c5;
+    color: #625e5a;
 }
 
 #workspaces button.focused {
-  background: #c5c9c5;
-  color: #181616;
+    color: #c5c9c5;
 }
-
-#workspaces button.active {
-  background: #181616;
-  color: #c5c9c5;
-}
-
