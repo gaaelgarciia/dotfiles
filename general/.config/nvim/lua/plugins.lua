@@ -3,13 +3,13 @@ vim.g.mapleader = " "
 vim.pack.add({
 	"https://github.com/ibhagwan/fzf-lua",
 	"https://github.com/folke/which-key.nvim",
-	"https://github.com/OXY2DEV/markview.nvim",
 	"https://github.com/rebelot/kanagawa.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/stevearc/conform.nvim",
 	"https://github.com/kdheepak/lazygit.nvim",
 	"https://github.com/rafamadriz/friendly-snippets",
 	"https://github.com/lervag/vimtex",
+	"https://github.com/mellow-theme/mellow.nvim",
 	"https://github.com/christoomey/vim-tmux-navigator",
 	{
 		src = "https://github.com/saghen/blink.cmp",
@@ -60,6 +60,7 @@ require("conform").setup({
 })
 
 require("kanagawa").setup({ opts = { transparent = true } })
+vim.g.mellow_transparent = true
 
 -- Vimtex config--
 -- Viewer depending on OS

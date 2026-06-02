@@ -1,6 +1,7 @@
 -- Set colorscheme and transparency
 
-vim.cmd.colorscheme("kanagawa-dragon")
+-- vim.cmd.colorscheme("kanagawa-dragon")
+vim.cmd.colorscheme("mellow")
 vim.cmd([[
   highlight Normal guibg=none
   highlight NonText guibg=none
