@@ -1,11 +1,10 @@
 * {
- border: none;
+    border: none;
     border-radius: 0;
     min-width: 0;
     min-height: 0;
     font-family: "Iosevka Term";
-    font-size: 16px;
-    opacity: 0.98;
+    font-size: 15px;
     padding: 0;
     margin-right: 2px;
 }
@@ -15,9 +14,8 @@ window#waybar {
     color: #c5c9c5;
 }
 
-
 #workspaces {
-    padding-right: 10px;
+    padding-right: 2px;
     border-radius: 0px;
     margin-left: 5px;
 }
