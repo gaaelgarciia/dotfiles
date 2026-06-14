@@ -4,10 +4,13 @@
   "modules-left": ["sway/workspaces", "clock"],
   "modules-center": ["sway/window"],
   "modules-right": ["memory","cpu","sway/language","pulseaudio","network"],
-
+  // I didnt make it work
+// "custom/pomodozig": {
+//   "exec": "/home/gael/pomodozig-script.sh",
+//     "return-type": "json"
+// },
   "sway/workspaces": {
 	"all-outputs": true,
-	"format": "{name}",
 	"format": "{icon}{name}{icon}",
 	"format-icons": {
 		"focused": "|",
@@ -18,7 +21,7 @@
     "format": "{title}"
   },
   "sway/language": {
-	      "format": "|kb {short} {variant}",
+      "format": "|kb {short} {variant}"
   },
   "memory": {
     "format": "r{used}::"
@@ -38,6 +41,6 @@
 	  "format": "|{ifname}",
 	  "on-click": "foot nmtui",
 	  "interval": 2
-  },
+  }
 }
 

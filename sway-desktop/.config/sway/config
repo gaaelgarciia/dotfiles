@@ -203,7 +203,9 @@ set $gnome-schema org.gnome.desktop.interface
 bar {
 	swaybar_command /usr/bin/waybar
 }
+
 bindsym $mod+m exec --no-startup-id killall -SIGUSR1 waybar 
+
 exec --no-startup-id dunst
 
 bindsym $mod+p exec ~/git_clones/pmenu/target/debug/pmenu
@@ -213,6 +215,7 @@ client.focused_inactive #202020 #202020 #9b8d7f #202020 #202020
 client.unfocused #202020 #202020 #9b8d7f #202020 #202020
 
 bindsym $mod+shift+w exec ~/.config/sway/scripts/walls.sh
+bindsym $mod+shift+s exec ~/.config/sway/scripts/launch_scripts.sh
 
 smart_gaps on
 gaps inner 3
