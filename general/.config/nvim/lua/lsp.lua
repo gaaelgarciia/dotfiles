@@ -69,5 +69,7 @@ vim.lsp.enable({
 	"lua_ls",
 	"ruff",
 	"rust-analyzer",
+	"marksman"
 })
+
 vim.diagnostic.config({ virtual_text = true })

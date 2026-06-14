@@ -108,17 +108,4 @@ vim.api.nvim_create_autocmd("TermOpen", {
 	end,
 })
 
--- Easily hit escape in terminal mode.
-vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
-
--- Open a terminal at the bottom of the screen with a fixed height.
-vim.keymap.set("n", ",st", function()
-	vim.cmd.new()
-	vim.cmd.wincmd("J")
-	vim.api.nvim_win_set_height(0, 10)
-	vim.wo.winfixheight = true
-	vim.cmd.term()
-end)
-
--- LazyGit keymap--
-vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
+vim.g.showtabline = 2
