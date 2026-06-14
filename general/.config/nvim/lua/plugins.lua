@@ -32,8 +32,14 @@ do
 	vim.pack.del({ name })
 end
 
+local backend = "sixel" -- default for foot
+-- Ghostty sets GHOSTTY_RESOURCES_DIR and TERM_PROGRAM=ghostty
+if vim.env.TERM_PROGRAM == "ghostty" or vim.env.GHOSTTY_RESOURCES_DIR then
+    backend = "kitty"
+end
+
 require("image").setup({
-	backend = "sixel", -- or "ueberzug" or "sixel"
+	backend = backend,
 })
 
 require("blink.cmp").setup({
