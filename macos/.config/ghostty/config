@@ -1,8 +1,8 @@
 theme = Kanagawa Dragon
 background-opacity = 0.85
-font-size = 24
-# The option below disables rounded corners, but it some times doesnt work
-# window-decoration = false
+font-size = 16
 macos-window-shadow = false
 macos-titlebar-style = hidden
 font-family = Iosevka Term
+# The option below disables rounded corners, but it some times doesnt work
+# window-decoration = false
