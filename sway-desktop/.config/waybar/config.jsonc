@@ -1,7 +1,7 @@
 {
   "position": "top",
   "height": 20,
-  "modules-left": ["sway/workspaces", "clock"],
+  "modules-left": ["sway/workspaces", "clock","tray"],
   "modules-center": ["sway/window"],
   "modules-right": ["memory","cpu","sway/language","pulseaudio","network"],
   // I didnt make it work
@@ -9,6 +9,11 @@
 //   "exec": "/home/gael/pomodozig-script.sh",
 //     "return-type": "json"
 // },
+// good to have for some apps
+"tray": {
+    "icon-size": 12,
+    "spacing": 5
+},
   "sway/workspaces": {
 	"all-outputs": true,
 	"format": "{icon}{name}{icon}",
