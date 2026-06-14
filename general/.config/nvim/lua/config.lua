@@ -83,7 +83,6 @@ vim.o.breakindent = true
 
 vim.g.netrw_winsize = 20
 vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 1
 
 vim.o.relativenumber = true
 vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "grey" })

@@ -11,6 +11,7 @@ vim.pack.add({
 	"https://github.com/lervag/vimtex",
 	"https://github.com/mellow-theme/mellow.nvim",
 	"https://github.com/christoomey/vim-tmux-navigator",
+	"https://github.com/3rd/image.nvim",
 	{
 		src = "https://github.com/saghen/blink.cmp",
 		version = vim.version.range("1.*"),
@@ -30,6 +31,10 @@ for _, name in
 do
 	vim.pack.del({ name })
 end
+
+require("image").setup({
+	backend = "sixel", -- or "ueberzug" or "sixel"
+})
 
 require("blink.cmp").setup({
 	keymap = { preset = "super-tab" },
